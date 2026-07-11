@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@import "@fontsource/fraunces/500.css";
+@import "@fontsource/fraunces/600.css";
+@import "@fontsource/fraunces/600-italic.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+
+:root {
+  --ink: #1f2421;
+  --paper: #efe6cf;
+  --paper-raised: #f7f1e2;
+  --verdigris: #3e7c74;
+  --verdigris-dark: #2c5a54;
+  --amber: #d99a2b;
+  --rust: #ad4a35;
+  --slate: #6b6459;
+  --line: #c9bd9e;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-paper-raised: var(--paper-raised);
+  --color-verdigris: var(--verdigris);
+  --color-verdigris-dark: var(--verdigris-dark);
+  --color-amber: var(--amber);
+  --color-rust: var(--rust);
+  --color-slate: var(--slate);
+  --color-line: var(--line);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+* {
+  border-color: var(--line);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(31,36,33,0.05) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+/* Perforated tear-line, the board's signature motif */
+.perforated {
+  background-image: radial-gradient(circle, var(--paper) 2.5px, transparent 2.6px);
+  background-size: 14px 14px;
+  background-position: -4px center;
+  background-repeat: repeat-x;
+  height: 1px;
+}
+
+.stamp {
+  font-family: var(--font-mono);
+  letter-spacing: 0.06em;
+}
+
+.input {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(31, 36, 33, 0.2);
+  background: var(--paper-raised);
+  color: var(--ink);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--verdigris);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 0.4s ease-out both;
+  }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
