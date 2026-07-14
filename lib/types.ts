@@ -12,11 +12,11 @@ export interface Job {
   category: string;
   salaryMin: number;
   salaryMax: number;
-  postedAt: string; // ISO date
-  closesAt: string; // ISO date
+  postedAt: string; 
+  closesAt: string; 
   description: string;
   responsibilities: string[];
   requirements: string[];
   applyUrl?: string;
-  custom?: boolean; // true if posted by the user via the Post a Job form
+  custom?: boolean; 
 }

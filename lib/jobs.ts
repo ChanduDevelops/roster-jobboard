@@ -55,7 +55,7 @@ export function daysUntil(dateStr: string): number {
 export function formatSalary(job: Job): string {
   const isHourly = job.salaryMax < 500;
   const fmt = (n: number) =>
-    isHourly ? `$${n}/hr` : `$${Math.round(n / 1000)}k`;
+    isHourly ? `₹${n}/hr` : `₹${Math.round(n / 1000)}k`;
   return `${fmt(job.salaryMin)}–${fmt(job.salaryMax)}`;
 }
 
